@@ -5,7 +5,7 @@ function SearchBar({ handleSearch }) {
     const [searchTerm, setSearchTerm] = useState('')
 
     return (
-        <form  >
+        <form>
             <input onChange={(e) => handleSearch(e, e.target.value)} placeholder="Search" />
             <input type='submit' value="Search" />
         </form>
