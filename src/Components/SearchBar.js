@@ -6,7 +6,7 @@ function SearchBar({ handleSearch }) {
 
     return (
         <form>
-            <input onChange={(e) => handleSearch(e, e.target.value)} placeholder="Search" />
+            <input onChange={(e) => handleSearch(e, e.target.value)} onSubmit={(e) => handleSearch(e, e.target.value)} placeholder="Search" />
             <input type='submit' value="Search" />
         </form>
     )
