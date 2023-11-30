@@ -40,8 +40,6 @@ function AlbumView() {
     return (
         <div >
             <NavButtons />
-            <p>Album Data Goes Here!</p>
-            <p> ID: {id}</p>
             {albumData.length > 0 ? <h2>{albumData[0].artistName}</h2> : <h2>Loading...</h2>}
             {albumData.length > 0 ? <h3>Album Title: {albumData[0].collectionName}</h3> : <h3></h3>}
 
