@@ -43,6 +43,7 @@ function App() {
             <>
               <SearchBar handleSearch={handleSearch} />
               <DataContext.Provider value={data} />
+              {message}
               <Gallery />
             </>
           } />
