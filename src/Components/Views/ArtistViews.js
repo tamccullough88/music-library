@@ -1,6 +1,7 @@
 // These components will be making separate API calls from the app
 // component to serve specific data about our artist
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 
 
@@ -24,7 +25,11 @@ function ArtistView() {
     const renderAlbums = justAlbums.map((album, i) => {
         return (
             <div key={i}>
-                <p>{album.collectionName}</p>
+
+                <Link to={`/album/${album.collectionId}`}>
+                    {album.collectionName}
+                </Link>
+
             </div>
         )
     })
