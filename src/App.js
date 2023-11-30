@@ -1,10 +1,7 @@
 import { useState, useEffect } from 'react';
 import { DataContext } from './Components/contexts/DataContext'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SearchBar from './Components/SearchBar'
 import Gallery from './Components/Gallery/Gallery'
-import AlbumView from './Components/Views/AlbumViews';
-import ArtistView from './Components/Views/ArtistViews';
 
 function App() {
 
@@ -36,21 +33,12 @@ function App() {
   }
 
   return (
-    <div>
-      <Router>
-        <Routes>
-          <Route path='/' element={
-            <>
-              <SearchBar handleSearch={handleSearch} />
-              <DataContext.Provider value={data} />
-              {message}
-              <Gallery />
-            </>
-          } />
-          <Route path='/album/:id' element={<AlbumView />} />
-          <Route path='/artist/:id' element={<ArtistView />} />
-        </Routes>
-      </Router>
+    <div className="App">
+      <SearchBar handleSearch={handleSearch} />
+      {message}
+      <DataContext.Provider value={data}>
+        <Gallery />
+      </DataContext.Provider>
     </div>
   );
 }
