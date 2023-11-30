@@ -15,14 +15,15 @@ function ArtistView() {
         const fetchData = async () => {
             const response = await fetch(API_URL)
             const data = await response.json()
-            setArtistData(data.results)
+            const albums = data.results.filter(entry => entry.collectionType === 'Album')
+            setArtistData(albums)
             console.log(data)
         }
         fetchData()
     }, [id])
 
-    const justAlbums = artistData.filter(entry => entry.collectionType === 'Album')
-    const renderAlbums = justAlbums.map((album, i) => {
+
+    const renderAlbums = artistData.map((album, i) => {
         return (
             <div key={i}>
 
@@ -34,15 +35,16 @@ function ArtistView() {
         )
     })
 
+
+
     const style = {
-        'text-align': 'center'
+        'textAlign': 'center'
     }
 
     return (
         <div style={style}>
             <NavButtons />
-            <p>Artist Data Goes Here!</p>
-            <p> ID: {id}</p>
+            {artistData.length > 0 ? <h2>{artistData[0].artistName}</h2> : <h2>Loading...</h2>}
             {renderAlbums}
         </div>
     )
