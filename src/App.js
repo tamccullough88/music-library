@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { DataContext } from './Components/contexts/DataContext'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SearchBar from './Components/SearchBar'
 import Gallery from './Components/Gallery/Gallery'
 import AlbumView from './Components/Views/AlbumViews';
