@@ -41,6 +41,7 @@ function App() {
           <Route path='/' element={
             <>
               <SearchBar handleSearch={handleSearch} />
+              {message}
               <Gallery data={data} />
             </>
           } />
