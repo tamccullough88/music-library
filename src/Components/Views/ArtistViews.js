@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
-
+import NavButtons from '../NavButtons'
 
 
 function ArtistView() {
@@ -40,6 +40,7 @@ function ArtistView() {
 
     return (
         <div style={style}>
+            <NavButtons />
             <p>Artist Data Goes Here!</p>
             <p> ID: {id}</p>
             {renderAlbums}

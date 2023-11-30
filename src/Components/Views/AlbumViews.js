@@ -2,10 +2,13 @@
 // component to serve specific data about a given album
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import NavButtons from '../NavButtons'
 
 function AlbumView() {
     const { id } = useParams()
     const [albumData, setAlbumData] = useState([])
+
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -30,12 +33,13 @@ function AlbumView() {
         )
     })
 
-    const style = {
-        'text-align': 'center'
-    }
+
+
+
 
     return (
-        <div style={style}>
+        <div >
+            <NavButtons />
             <p>Album Data Goes Here!</p>
             <p> ID: {id}</p>
             {renderTracks}
